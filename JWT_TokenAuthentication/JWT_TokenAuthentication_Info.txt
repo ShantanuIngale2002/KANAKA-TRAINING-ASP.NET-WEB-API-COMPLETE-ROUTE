@@ -1,0 +1,112 @@
+~JWT -> A JSON web token(JWT) is JSON Object which is used to securely transfer information over the web(between two parties). It can be used for an authentication system and can also be used for information exchange.The token is mainly composed of header, payload, signature. These three parts are separated by dots(.)
+
+
+~Header -> A header in a JWT is mostly used to describe the cryptographic operations applied to the JWT like signing/decryption technique used on it. It can also contain the data about the media/content type of the information we are sending.This information is present as a JSON object then this JSON object is encoded to BASE64URL. The cryptographic operations in the header define whether the JWT is signed/unsigned or encrypted and are so then what algorithm techniques to use.
+ex :
+{
+    "typ":"JWT",
+    "alg":"HS256"
+}
+The ‘alg’ and ‘typ’ are object key’s having different values and different functions like the ‘typ’ gives us the type of the header this information packet is, whereas the ‘alg’ tells us about the encryption algorithm used. HS256 and RS256 are the two main algorithms used.
+
+
+~Payload  -> The payload is the part of the JWT where all the user data is actually added. This data is also referred to as the ‘claims’ of the JWT.This information is readable by anyone so it is always advised to not put any confidential information in here. This part generally contains user information. This information is present as a JSON object then this JSON object is encoded to BASE64URL. We can put as many claims as we want inside a payload, though unlike header, no claims are mandatory in a payload.
+ex :
+ {
+     "userId":"b07f85be-45da",
+     "iss": "https://provider.domain.com/",
+     "sub": "auth/some-hash-here",
+     "exp": 153452683
+ }
+
+
+>>>>>>>>>>> De-Serialized jwt -> header , payload only. Shared differently.   ie.  [HEADER]  then  [PAYLOAD]
+
+>>>>>>>>>>> Serialized jwt -> header , payload and signature. Shared as one dot separated    ie.  [HEADER].[PAYLOAD].[SIGNATURE]
+
+
+~ Signature -> This is the third part of JWT and used to verify the authenticity of token. BASE64URL encoded header and payload are joined together with dot(.) and it is then hashed using the hashing algorithm defined in a header with a secret key. This signature is then appended to header and payload using dot(.) which forms our actual token header.payload.signature
+
+ex :
+header:
+
+{
+  "alg" : "HS256",
+
+  "typ" : "JWT"
+}
+
+Payload:
+
+{
+  "id" : 123456789,
+
+  "name" : "Joseph"
+}
+
+Secret: GeeksForGeeks
+
+
+
+
+
+
+
+
+~ Claims used in code
+
+A claim in the context of a JWT (JSON Web Token) is a piece of information about a user or an entity. Claims are key-value pairs included in the token's payload to convey specific details, such as user identity and metadata. They are used for authentication and authorization purposes.
+
+Use Cases:
+Authentication: Validate the identity of the user (e.g., using "sub", "Id", "UserName", "Email").
+Authorization: Determine what actions the user is allowed to perform (e.g., roles, permissions).
+Information: Provide additional context about the user (e.g., email, user ID).
+In this specific code block, the claims are used to:
+
+Identify the user (Id, UserName, Email).
+Associate the token with the subject specified in the configuration (Jwt:Subject).
+These claims are included in the JWT, which is then used by various parts of an application to verify the user's identity and access rights.
+
+ex :
+var claims = new[]
+{
+    new Claim(JwtRegisteredClaimNames.Sub, configuration["Jwt:Subject"]),
+    new Claim("Id", user.Id.ToString()),
+    new Claim("UserName", user.Name),
+    new Claim("Email", user.Email),
+};
+// explaination
+var claims = new[] { ... };: This initializes an array of Claim objects.
+new Claim(JwtRegisteredClaimNames.Sub, configuration["Jwt:Subject"]): This creates a claim with the standard JWT "sub" (subject) claim name and sets its value from the configuration setting Jwt:Subject.
+new Claim("Id", user.Id.ToString()): This creates a custom claim with the name "Id" and sets its value to the user's ID converted to a string.
+new Claim("UserName", user.Name): This creates a custom claim with the name "UserName" and sets its value to the user's name.
+new Claim("Email", user.Email): This creates a custom claim with the name "Email" and sets its value to the user's email address.
+In summary, this code creates a set of claims (key-value pairs) that will be included in the payload of a JWT, containing both standard and custom information about the user.
+
+
+
+
+~ Generate Token
+
+1. var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
+This line creates a SymmetricSecurityKey using a secret key from the configuration. It converts the key from a string (in UTF-8 encoding) into a byte array, which is required for cryptographic operations.
+
+2. var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+This line creates SigningCredentials using the symmetric key and specifies the HMAC SHA-256 algorithm for hashing. These credentials will be used to sign the JWT, ensuring it hasn't been tampered with.
+
+3. var token = new JwtSecurityToken(
+    configuration["Jwt:Issuer"],
+    configuration["Jwt:Audience"],
+    claims,
+    expires: DateTime.UtcNow.AddMinutes(10),
+    signingCredentials: signIn);
+This block constructs a JwtSecurityToken object with several parameters:
+Issuer: The entity that issues the token, taken from the configuration.
+Audience: The intended recipient(s) of the token, also from the configuration.
+claims: The array of claims created earlier.
+expires: The expiration time of the token, set to 10 minutes from the current time.
+signingCredentials: The credentials created earlier for signing the token.
+
+4. var JwtToken = new JwtSecurityTokenHandler().WriteToken(token);
+   return JwtToken;
+This block generates a string representation of the JWT from the JwtSecurityToken object using JwtSecurityTokenHandler().WriteToken(token) and returns this string. The resulting string is the JWT that can be sent to clients for authenticated requests.

@@ -1,0 +1,90 @@
+﻿@model PracticeForTelerickUI01.Models.BookCompleteDataModel
+
+@{
+    ViewData["Title"] = "UpdateBook";
+}
+
+
+@* @{
+    var bookGenres = new List<string> { "Action", "Adventure", "Art", "Autobiography", "Biography", "Business", "Children's", "Christian", "Classics", "Comedy", "Contemporary", "Cookbooks", "Crafts", "Crime", "Cultural", "Documentary", "Drama", "Ebooks", "Esoterica", "Essays", "Fantasy", "Fashion", "Fiction", "Film-Noir", "Finance", "Gardening", "Graphic Novels", "Health", "High Fantasy", "Historical Fiction", "History", "Horror", "Humor", "Legal", "Literature", "Medical", "Memoir", "Military", "Music", "Musical", "Mystery", "Nature", "New Age", "Occult", "Paranormal", "Parenting", "Philosophy", "Poetry", "Political", "Psychology", "Religion", "Romance", "Satire", "Science", "Science Fiction", "Self-Help", "Spirituality", "Sport", "Supernatural", "Suspense", "Technology", "Thriller", "Travel", "True Crime", "Urban", "War", "Western", "Young Adult" };
+} *@
+
+
+<div class="mt-4 mb-2">
+    <h3 class="">Update the Book.</h3>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateBook">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BookId" />
+            <div class="form-group">
+                <label asp-for="BookCode" class="control-label"></label>
+                <input asp-for="BookCode" class="form-control" readonly/>
+                @* <span asp-validation-for="BookCode" class="text-danger"></span> *@
+            </div>
+            <div class="form-group">
+                <label asp-for="BookName" class="control-label"></label>
+                <input asp-for="BookName" class="form-control" />
+                <span asp-validation-for="BookName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddedOnDate" class="control-label"></label>
+                @(Html.Kendo().DateTimePicker()
+                    .Name("AddedOnDate") // Name should match the model property name
+                    .HtmlAttributes(new { @class = "form-control" })
+                    .Min(@DateTime.Today.AddMonths(-1))
+                    .Max(new DateTime(2099, 12, 31))
+                    .Value(@Model.AddedOnDate)
+                    )
+                @* <input asp-for="AddedOnDate" class="form-control" /> *@
+                <span asp-validation-for="AddedOnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                @(Html.Kendo().DropDownList()
+                    .Name("Genre")
+                    //.BindTo(bookGenres)
+                    .DataSource(datasource => datasource
+                        .Read(read=> read.Action("Get_Books_Genres","Home"))
+                    )
+                    .Value(Model.Genre)
+                )
+                @* <input asp-for="Genre" class="form-control" /> *@
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AuthorName" class="control-label"></label>
+                <input asp-for="AuthorName" class="form-control" />
+                <span asp-validation-for="AuthorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalStock" class="control-label"></label>
+                <input asp-for="TotalStock" class="form-control" />
+                <span asp-validation-for="TotalStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BorrowedCount" class="control-label"></label>
+                <input asp-for="BorrowedCount" class="form-control" />
+                <span asp-validation-for="BorrowedCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <div>
+        <a asp-action="GetAllBooks" class="btn btn-secondary my-2">Goto Grid Page</a>
+    </div>
+    <div>
+        <a asp-action="SearchToUpdateBook" class="btn btn-secondary">Goto Search</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

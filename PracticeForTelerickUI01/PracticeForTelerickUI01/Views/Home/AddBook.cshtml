@@ -1,0 +1,218 @@
+﻿@using System;
+@using System.Collections.Generic;
+@using System.Text;
+@addTagHelper *, Kendo.Mvc
+
+@model PracticeForTelerickUI01.Models.BookCompleteDataModel
+
+@{
+    ViewData["Title"] = "AddBook";
+}
+
+@{
+
+}
+
+
+@* @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor *@
+@{
+    var bookGenres = new List<string> { "Action", "Adventure", "Art", "Autobiography", "Biography", "Business", "Children's", "Christian", "Classics", "Comedy", "Contemporary", "Cookbooks", "Crafts", "Crime", "Cultural", "Documentary", "Drama", "Ebooks", "Esoterica", "Essays", "Fantasy", "Fashion", "Fiction", "Film-Noir", "Finance", "Gardening", "Graphic Novels", "Health", "High Fantasy", "Historical Fiction", "History", "Horror", "Humor", "Legal", "Literature", "Medical", "Memoir", "Military", "Music", "Musical", "Mystery", "Nature", "New Age", "Occult", "Paranormal", "Parenting", "Philosophy", "Poetry", "Political", "Psychology", "Religion", "Romance", "Satire", "Science", "Science Fiction", "Self-Help", "Spirituality", "Sport", "Supernatural", "Suspense", "Technology", "Thriller", "Travel", "True Crime", "Urban", "War", "Western", "Young Adult" };
+}
+
+
+
+<div class="mt-4 mb-2">
+    <h3 class="">Add New Book</h3>
+</div>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+        @{
+            if (ViewBag.IfAdded == "Success")
+            {
+                                        <h4 class="text-success my-2 text-nowrap">This book is added successfully.</h4>
+                                        <hr />
+            }
+            else if (ViewBag.IfAdded != null)
+            {
+                                        <h4 class="text-danger my-2 text-nowrap">Error : @ViewBag.IfAdded</h4>
+                                        <hr />
+            }
+        }
+        
+        <form asp-action="AddBook">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BookCode" class="control-label"></label>
+                <input asp-for="BookCode" class="form-control" />
+                <span asp-validation-for="BookCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookName" class="control-label"></label>
+                <input asp-for="BookName" class="form-control" />
+                <span asp-validation-for="BookName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddedOnDate" class="control-label"></label>
+                @(Html.Kendo().DateTimePicker()
+                    .Name("AddedOnDate") // Name should match the model property name
+                    .HtmlAttributes(new { @class = "form-control" })
+                    .Min(@DateTime.Today.AddMonths(-1))
+                    .Max(new DateTime(2099, 12, 31))
+                    .Value(@DateTime.Today)
+                    )
+                @* <input asp-for="AddedOnDate" class="form-control" /> *@
+                <span asp-validation-for="AddedOnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+
+                @*this select to just manipulate data source, like both cannot have fantasy genre in datasource*@
+                <div class="my-1">
+                    @* <select id="genresdd1"></select> *@
+                    @(
+                        Html.Kendo().DropDownList()
+                            .Name("genresdd1")
+                    )
+                </div>
+                @*this dropdownlist is actually providing value to genre in model*@
+                @* <input id="Genre" asp-for="Genre" class="form-control" /> *@
+                @(
+                    Html.Kendo().DropDownList()
+                        .Name("Genre")
+                )
+                
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AuthorName" class="control-label"></label>
+                <input asp-for="AuthorName" class="form-control" />
+                <span asp-validation-for="AuthorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalStock" class="control-label"></label>
+                <input asp-for="TotalStock" class="form-control" />
+                <span asp-validation-for="TotalStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BorrowedCount" class="control-label"></label>
+                <input asp-for="BorrowedCount" class="form-control" />
+                <span asp-validation-for="BorrowedCount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a asp-action="GetAllBooks" class="btn btn-secondary my-2">Goto Grid Page</a>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Goto Home page</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+
+
+    $(document).ready(function () {
+
+        // First fetch the data from action implemented in Home controller
+        function fetchGenresData() {
+            return $.ajax({
+                url: "@Url.Action("Get_Books_Genres", "Home")", // Adjust the URL to your action method
+                dataType: "json"
+            });
+        }
+        
+
+        var genresDropdown1, genresDropdown2; // initialize these var's
+
+
+
+        // Initial process when page is loaded
+        fetchGenresData().then(function (data) {
+            
+            // setting in local storage to make sure that we dont need to get genres whenvever any of the dropdownlist is changed and call filter function
+            localStorage.setItem("Genres", JSON.stringify(data));
+
+            // now making sure that dd's have diffr init vals and that not present in other dd's data source
+            var initialForOne = data[0];     
+            var initialForTwo = data[1];
+
+            var filteredDataForOne = data.filter(function (item) {
+                return item !== initialForTwo;
+            });
+            var filteredDataForTwo = data.filter(function (item) {
+                return item !== initialForOne;
+            });
+
+            // Initialize drop downs
+            genresDropdown1 = $("#genresdd1").kendoDropDownList({
+                dataSource: filteredDataForOne,
+                change: function () {
+                    filterGenres(genresDropdown1, genresDropdown2);
+                }
+            }).data("kendoDropDownList");
+
+            genresDropdown2 = $("#Genre").kendoDropDownList({
+                dataSource: filteredDataForTwo,
+                change: function () {
+                    filterGenres(genresDropdown2, genresDropdown1);
+                }
+            }).data("kendoDropDownList");
+
+            // set the values we set initial to them
+            genresDropdown1.value(initialForOne);
+            genresDropdown2.value(initialForTwo);
+        });
+
+
+
+
+        // whenever any change in any dd filter others dd curr val
+        function filterGenres(changedDropdown, otherDropdown) {
+
+            var selectedValue = changedDropdown.value();
+
+            var getGenres = JSON.parse(localStorage.getItem("Genres"));
+
+            var filteredData = getGenres.filter(function (item) {
+                return item !== selectedValue;
+            });
+
+            otherDropdown.dataSource.data(filteredData);
+        }
+    });
+
+
+    
+    
+    
+
+    /*
+    $(document).ready(function () {
+        $("#genres").kendoDropDownList({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "@Url.Action("Get_Books_Genres", "Home")",
+                        dataType: "json"
+                    }
+                }
+            }
+        });
+    });
+    */
+</script>
+

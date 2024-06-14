@@ -1,0 +1,262 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\repository\\service\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\repository\\service\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\data\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\data\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\data\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\data\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\data\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\data\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\data\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\data\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\models\\adduserrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\models\\adduserrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\repository\\interface\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\repository\\interface\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\repository\\efcore\\rolebasedappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\repository\\efcore\\rolebasedappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\repository\\service\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\repository\\service\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\repository\\interface\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\repository\\interface\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|c:\\users\\kanaka\\source\\repos\\asp.net core web api\\jwt_rolebasedauthorization_webapiapp\\jwt_rolebasedauthorization_webapiapp\\models\\loginrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A12ADF0-7C13-4D2B-84EC-EC38ED926589}|JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp.csproj|solutionrelative:jwt_rolebasedauthorization_webapiapp\\models\\loginrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Controllers\\EmployeeController.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAIwBYAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T06:08:09.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Service\\AuthService.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Service\\AuthService.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Service\\AuthService.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Service\\AuthService.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAqwGMAAAB6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:30:46.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AddUserRole.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Models\\AddUserRole.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Models\\AddUserRole.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Models\\AddUserRole.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Models\\AddUserRole.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:28:58.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Program.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Program.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Program.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Program.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAgwEQAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:18:19.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\appsettings.json",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\appsettings.json",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\appsettings.json",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-04T05:16:21.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RoleBasedAppContext.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Repository\\EFCore\\RoleBasedAppContext.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Repository\\EFCore\\RoleBasedAppContext.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Repository\\EFCore\\RoleBasedAppContext.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Repository\\EFCore\\RoleBasedAppContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAkwAcAAABaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:13:59.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Data\\UserRole.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Data\\UserRole.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Data\\UserRole.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Data\\UserRole.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:06:21.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Data\\Role.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Data\\Role.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Data\\Role.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Data\\Role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:05:28.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T06:07:48.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Data\\User.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Data\\User.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Data\\User.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Data\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:04:43.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Data\\Employee.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Data\\Employee.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Data\\Employee.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Data\\Employee.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:07:25.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Service\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Service\\EmployeeService.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Service\\EmployeeService.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Service\\EmployeeService.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAADwvx4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:18:49.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IEmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Interface\\IEmployeeRepository.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Interface\\IEmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Interface\\IEmployeeRepository.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Interface\\IEmployeeRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:08:56.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IAuthRepository.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Interface\\IAuthRepository.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Interface\\IAuthRepository.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Interface\\IAuthRepository.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Repository\\Interface\\IAuthRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:08:40.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoginRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Models\\LoginRequestModel.cs",
+              "RelativeDocumentMoniker": "JWT_RoleBasedAuthorization_WebApiApp\\Models\\LoginRequestModel.cs",
+              "ToolTip": "C:\\Users\\kanaka\\source\\repos\\ASP.NET CORE WEB API\\JWT_RoleBasedAuthorization_WebApiApp\\JWT_RoleBasedAuthorization_WebApiApp\\Models\\LoginRequestModel.cs",
+              "RelativeToolTip": "JWT_RoleBasedAuthorization_WebApiApp\\Models\\LoginRequestModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T05:12:10.565Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

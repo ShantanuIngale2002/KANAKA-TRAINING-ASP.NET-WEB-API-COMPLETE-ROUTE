@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PracticeForTelerickUI01</title>
+
+    <!-- Bootstrap CSS from CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Modernizr from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <!-- Add JSZip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PracticeForTelerickUI01.styles.css" asp-append-version="true" />
+
+    @{
+        var kendoVersion = "2024.2.514";
+    }
+
+    <link href="https://kendo.cdn.telerik.com/themes/8.0.1/default/default-main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+    <!-- Add the Kendo library by either using the JAVASCRIPT MODULES -->
+    <script src="https://kendo.cdn.telerik.com/2024.2.514/mjs/kendo.all.js" type="module"></script>
+
+    <!-- OR by using the BUNDLED JAVASCRIPT -->
+    <script src="https://kendo.cdn.telerik.com/2024.2.514/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2024.2.514/js/kendo.aspnetmvc.min.js"></script>
+
+    <!-- jQuery Validate plugin from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <!-- jQuery Validate Unobtrusive plugin from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+
+    <!-- To remove p tag of telerik's free version instruction -->
+    <style>
+        p {
+            visibility: hidden !important;
+            position: absolute !important;
+        }
+        #k-license-banner{
+            display :none !important;
+        }
+    </style>
+
+    
+
+</head>
+<body>
+    <header>
+        <!-- Your header code -->
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <!-- Your footer code -->
+    </footer>
+
+    
+</body>
+</html>

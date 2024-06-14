@@ -1,0 +1,38 @@
+1. Craeat Web Api App
+
+2. Install nugget packages
+	i. ms.EntityFrameworkCore
+	ii. ---------------------.SqlServer
+	iii. --------------------.Tools
+	iv. ms.core.authentication.JwtBearer
+
+3. Created folders only -> Models, Data, Repository/Service/EFcore
+
+4. For each created classes.
+
+5. appsettings
+"AllowedHosts": "*",
+"ConnectionStrings": {
+  "Jwt_RoleBasedAuthorization_ProjectDB": "Data Source=DESKTOP-OK5KH4G\\SQLEXPRESS;Initial Catalog=Jwt_RoleBasedAuthorization_ProjectDB;Integrated Security=True;Trust Server Certificate=True"
+},
+"Jwt": {
+  "Key": "s7fg973ds6773aaaaaCustomSecretStringToGenerateTokenaaaaa73hd9",
+  "Issuer": "JWTAuthenticationServer",
+  "Audience": "JWTServicePostmanClient",
+  "Subject": "JWTServiceAccessToken"
+}
+
+6. program.cs
+builder.Services.AddDbContext<RoleBasedAppContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Jwt_RoleBasedAuthorization_ProjectDB")));
+
+7. migrated db
+ tools->nugget packager console (add-migration migration_name , update-database)
+
+8. Checkout the AuthService implementation of Login method its important
+
+
+
+
+
+
+

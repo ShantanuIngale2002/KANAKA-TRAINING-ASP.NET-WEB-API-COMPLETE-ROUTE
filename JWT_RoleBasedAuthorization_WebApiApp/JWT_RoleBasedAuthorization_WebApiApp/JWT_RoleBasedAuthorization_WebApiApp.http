@@ -1,0 +1,6 @@
+@JWT_RoleBasedAuthorization_WebApiApp_HostAddress = http://localhost:5117
+
+GET {{JWT_RoleBasedAuthorization_WebApiApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

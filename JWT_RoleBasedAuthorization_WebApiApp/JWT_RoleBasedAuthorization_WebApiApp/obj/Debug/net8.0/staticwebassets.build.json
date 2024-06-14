@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "NAyKiPT3FP52dfMe9okbG6fRB0/owt7YRbYFKKq0yr8=",
+  "Source": "JWT_RoleBasedAuthorization_WebApiApp",
+  "BasePath": "_content/JWT_RoleBasedAuthorization_WebApiApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

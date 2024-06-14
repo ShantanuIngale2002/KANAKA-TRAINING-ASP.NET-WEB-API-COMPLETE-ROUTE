@@ -1,0 +1,90 @@
+﻿@model PracticeForTelerickUI01.Models.BookCompleteDataModel
+
+@{
+    ViewData["Title"] = "SearchBook";
+}
+
+
+<div class="mt-4 mb-2">
+    <h3 class="">Search Book Information to Delete</h3>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+        @{
+            if (ViewBag.SearchResult == "DeleteSuccess")
+            {
+                <h4 class="text-success my-2 text-nowrap">Book is Updated Successfully.</h4>
+                <hr />
+            }
+            else if (ViewBag.SearchResult == "DeleteRedirect")
+            {
+                <h4 class="text-warning my-2 text-nowrap">First Search to Delete the book.</h4>
+                <hr />
+            }
+            else if (ViewBag.SearchResult != null)
+            {
+                <h4 class="text-danger my-2 text-nowrap">This book is not Found.</h4>
+                <hr />
+            }
+        }
+
+        <form asp-action="SearchToDeleteBook" method="get">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BookCode" class="control-label"></label>
+                <input asp-for="BookCode" class="form-control" />
+                <span asp-validation-for="BookCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" formmethod="post">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@if (Model != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Book Code</th>
+                <th>Book Name</th>
+                <th>Added On</th>
+                <th>Genre</th>
+                <th>Author Name</th>
+                <th>Total Stock</th>
+                <th>Count of Borrow</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.BookCode</td>
+                <td>@Model.BookName</td>
+                <td>@Model.AddedOnDate</td>
+                <td>@Model.Genre</td>
+                <td>@Model.AuthorName</td>
+                <td>@Model.TotalStock</td>
+                <td>@Model.BorrowedCount</td>
+                <td>
+                    <a asp-action="DeleteBook" asp-route-BookCode="@Model.BookCode" class="btn btn-danger text-white">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Go to Home page</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

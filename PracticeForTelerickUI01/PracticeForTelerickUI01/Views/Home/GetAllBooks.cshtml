@@ -1,0 +1,188 @@
+﻿@using Kendo.Mvc.UI
+
+
+<style>
+
+    #showGirdProcessNotification{
+        width : fit-content;
+        text-wrap:none;
+        font-size: 2rem;
+        padding: 10px 1rem;
+    }
+
+</style>
+
+
+<div id="TopDivToAppendNotification"></div>
+
+
+@(Html.Kendo().Notification()
+    .Name("showGirdProcessNotification")
+    .Position(position => position
+        .Top(20)
+        .Right(150)
+    )
+    .Height(50)
+    .Width(300)
+    .AutoHideAfter(3000)
+    .Button(true)
+)
+
+
+
+
+
+
+
+<div class="mt-4 mb-2">
+    <h3 class="">All Books Information</h3>
+</div>
+<hr />
+
+
+
+<div style="width:100%;height:60%">
+    @(
+        Html.Kendo().Grid<PracticeForTelerickUI01.Models.BookCompleteDataModel>()
+        .Name("BooksGrid")
+        .Columns(columns =>
+        {
+            columns.Bound(model => model.BookCode).Width(150);
+            columns.Bound(model => model.BookName).Width(250);
+            columns.Bound(model => model.AddedOnDate).Width(180).Format("{0:dd-MM-yyyy HH:mm:ss}").Title("Added on");
+            columns.Bound(model => model.Genre).Width(180);
+            columns.Bound(model => model.AuthorName).Width(250);
+            columns.Bound(model => model.TotalStock).Width(140).Title("Stocks");
+            columns.Bound(model => model.BorrowedCount).Width(140).Title("Borrowed");
+            columns.Template(
+                @<text>
+                    <span>
+                        <button class="k-button k-grid-edit btn btn-primary" id="EditButton" onclick="OnEditEvent(this)">
+                            Edit
+                        </button>
+                    </span>
+                    <span>
+                        <button class="k-button k-grid-delete btn btn-danger" id="DeleteButton" onclick="OnDeleteEvent(this)">
+                            Delete
+                        </button>
+                    </span>
+                </text>
+            ).Width(250).Title("Actions");
+
+            })
+            //.Pageable() // keep it for page based row view.
+            .Scrollable() // keep it for infinite scroll to rows in view.
+            .Filterable(ftp => ftp.Mode(GridFilterMode.Row))
+            .Resizable(resize => resize.Columns(true))
+            .HtmlAttributes(new { style = "height: 100%" })
+            .Selectable()
+            .ContextMenu()
+            .Editable(editable => editable.Mode(GridEditMode.InLine))
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .Model(model =>
+                {
+                    model.Id(model => model.BookId);
+                })
+                .ServerOperation(false)
+                .Read(read => read.Action("GetAllBooksForGrid", "Home"))
+            )
+            .ToolBar(tools =>
+            {
+                tools.Excel();
+            })
+            .Excel(excel => excel
+                .FileName("BooksExcelData.xlsx")
+                .Filterable(true)
+                .ProxyURL(Url.Action("ExportTo_ExcelData", "Home"))
+            )
+        )
+
+</div>
+
+
+
+
+<div>
+    <a asp-action="JsonAddBook" class="btn btn-primary px-2 mt-4 mb-2 text-nowrap">Add new Book</a>
+</div>
+<div>
+    <a asp-action="GetVisualizations" class="btn btn-secondary px-2 mt-4 mb-2 text-nowrap">Goto Visualization Page</a>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-secondary px-2 mb-2 text-nowrap">Goto Home page</a>
+</div>
+    
+
+
+
+
+<script>
+
+    function EventFunctionPostProcess(buttonPassed, urlControllerAction, ErrorProcess) {
+
+        // Get bookcode using closet row
+        var row = $(buttonPassed).closest("tr");
+        var dataItem = $("#BooksGrid").data("kendoGrid").dataItem(row);
+        var bookCode = dataItem.BookCode;
+
+        // Perform AJAX call to update action
+        $.ajax({
+            url: urlControllerAction, // url
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(bookCode), // bookcode
+            success: function (response) {
+                window.location.href = response.redirectToUrl; // for sucession Redirect to the returned URL.
+            },
+            error: function (result) {
+                console.error("Error " + ErrorProcess + " book:", result); // Showcase error if any.
+            }
+        });
+    }
+
+    function OnEditEvent(button) {
+        return EventFunctionPostProcess(button, "/Home/JSONUpdateBook", "Updating");
+    }
+
+
+    function OnDeleteEvent(button) {
+        return EventFunctionPostProcess(button, "/Home/JSONDeleteBook", "Deleting");
+    }
+
+
+
+
+    // function to show notification depending upon process the text is passed.
+    function showGridNotification(text) {
+
+        var showGirdProcessNotification = $("#showGirdProcessNotification").data("kendoNotification"); // get notification
+
+        showGirdProcessNotification.show(text, "info");
+
+        var container = $("#TopDivToAppendNotification");
+
+        container.scrollTop(container[0].scrollHeight);
+    }
+     
+
+    // on ready first check for viewbags if there is any message passed then pass the text accordingly.
+    $(document).ready(function () {
+
+        var ViewBagMessage = "@ViewBag.GridProcessResult"; // get viewbag content
+        var GridNotificationMsg = null;
+
+        if (ViewBagMessage == "AddSuccess") {
+            GridNotificationMsg = "The Book is Added Successfully.";
+        }
+        else if (ViewBagMessage == "UpdateSuccess") {
+            GridNotificationMsg = "The Book is Updated Successfully.";
+        }
+        else if (ViewBagMessage == "DeleteSuccess") {
+            GridNotificationMsg = "The Book is Deleted Successfully.";
+        }
+
+        showGridNotification(GridNotificationMsg); // call notification function
+    });
+
+</script>

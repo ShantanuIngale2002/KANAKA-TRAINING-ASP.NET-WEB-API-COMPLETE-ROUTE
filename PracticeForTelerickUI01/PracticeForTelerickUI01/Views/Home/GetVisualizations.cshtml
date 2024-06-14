@@ -1,0 +1,93 @@
+﻿
+
+
+
+
+<div class="w-100 text-nowrap text-uppercase text-center text-secondary mt-4">Pie Chart Visuals</div>
+
+<hr class="mt-2 mb-5" />
+
+
+@* <div id="YearChart"></div> *@
+
+@(
+Html.Kendo().Chart()
+    .Name("YearChart")
+)
+
+
+<hr class="my-5" />
+@* <div id="GenreChart"></div> *@
+
+@(
+Html.Kendo().Chart()
+    .Name("GenreChart")
+)
+
+
+
+<hr class="my-5" />
+
+
+<div>
+    <a asp-action="GetAllBooks" class="btn btn-secondary px-2 mt-4 mb-2 text-nowrap">Goto Grid Page</a>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-secondary px-2 mb-2 text-nowrap">Goto Home page</a>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+
+        function InitiatePieCharts(chartId, title, urlControllerAction) {
+            $("#"+chartId).kendoChart({
+                title: {
+                    text: title
+                },
+                legend: {
+                    position: "bottom"
+                },
+                seriesDefaults: {
+                    type: "pie",
+                    labels: {
+                        visible: true,
+                        format: "{0}%",
+                        template: "#= category #"
+                    }
+                },
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: urlControllerAction,
+                            dataType: "json"
+                        }
+                    },
+                    schema: {
+                        data: "Data" // Specify the property containing the data
+                    }
+                },
+                series: [{
+                    field: "Distribution",
+                    categoryField: "Category"
+                }],
+                tooltip: {
+                    visible: true,
+                    template: "#= category # : #= value  #" + "%"
+                }
+            });
+        }
+
+
+        InitiatePieCharts("YearChart", "Yearly-wise Book Distribution", "/Home/GetPerYearBookDistributionData");
+        InitiatePieCharts("GenreChart", "Genre-wise Book Distribution", "/Home/GetPerGenreBookDistributionData");
+
+    });
+</script>
+
+
+
+
+
+

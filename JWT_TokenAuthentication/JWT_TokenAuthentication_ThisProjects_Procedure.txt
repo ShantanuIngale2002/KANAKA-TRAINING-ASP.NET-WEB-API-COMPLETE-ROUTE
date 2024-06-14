@@ -1,0 +1,81 @@
+1. Create new ASP.NET CORE WEB API project.
+
+2. Install Nugget Packages
+	Right Click sol -> Manager nugget packages (can browse)
+	i. Microsoft.AspNetCore.Authentication.JwtBearer
+	ii. Microsoft.EntityFrameworkCore.SqlServer
+	iii. Microsoft.EntityFrameworkCore.Tools
+	iv. Microsoft.EntityFrameworkCore
+
+3. 
+	i. Create Folder "Models" -> LoginRequest.cs (shared as entity containing data)
+	ii. Create Folder "Data" -> User.cs, Employee.cs (used for manipulating db)
+
+4. Create Folder "Context"-> JwtContext.cs
+
+5. Sql connection dependency injection
+
+contextfile :
+public class JwtContext : DbContext
+{
+    public JwtContext(DbContextOptions<JwtContext> options): base(options) { }
+
+program file
+builder.Services.AddDbContext<JwtContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Jwt_TokenAuthentication_ProjectDB")));
+
+appsetting file
+"AllowedHosts": "*",
+"ConnectionStrings": {
+  "Jwt_TokenAuthentication_ProjectDB": "Data Source=DESKTOP-OK5KH4G\\SQLEXPRESS;Initial Catalog=Jwt_TokenAuthentication_ProjectDB;Integrated Security=True;Trust Server Certificate=True"
+}
+
+to generated database on models definition
+Tools -> nugget pakage manager console -{commands}-> add migration migration_name -> update-database
+
+
+6. Created Repository Folder (checkout)
+
+7. JWT Dependency Injection
+	i. appsetttings below connection string
+	,
+  	"Jwt": {
+    				"Key" : "s7fg973ds6773aaaaaCustomSecretStringToGenerateTokenaaaaa73hd9",
+    		"Issuer": "JWTAuthenticationServer",
+    		"Audience": "JWTServicePostmanClient",
+    		"Subject" :  "JWTServiceAccessToken"
+ 		},
+	
+
+8. Coded Login function in AuthService.cs
+	i. decorate login action with httppost attribute
+	ii. create SymmetricSecretKey using secret key value
+	iii. providing secret key and algo encode token
+
+
+after buildin the project its time to add authenctication of token dependancy
+
+9. In program.cs below addControllers method add this
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.RequireHttpsMetadata = false;
+        options.SaveToken = true;
+        options.TokenValidationParameters = new TokenValidationParameters()
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
+    });
+
+10. In EmployeeController.cs
+below
+[Route("api/[controller]")]
+[ApiController]
+add
+[Authorize]

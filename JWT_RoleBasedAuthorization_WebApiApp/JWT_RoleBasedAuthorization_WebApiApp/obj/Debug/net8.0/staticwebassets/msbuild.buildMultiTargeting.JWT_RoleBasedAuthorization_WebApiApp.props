@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\JWT_RoleBasedAuthorization_WebApiApp.props" />
+</Project>
